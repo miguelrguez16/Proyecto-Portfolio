@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Angular Inicio';
+  public title:string = 'Angular Inicio';
+  public mostrar_videojuegos:boolean = true;
+
+  public setEnabled(valor:boolean):void{
+    this.mostrar_videojuegos = valor;
+  }
+  
+
 }
+
+

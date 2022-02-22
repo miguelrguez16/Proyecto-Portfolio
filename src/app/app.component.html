@@ -1,6 +1,10 @@
 <div>
-  <h1>Vamos a aprender Angular</h1>
+  <h1>{{title}}</h1>
   <p> Bienvenidos</p>
-  <Videojuego></Videojuego>
+  <button (click)="setEnabled(false)" *ngIf="mostrar_videojuegos">OCULTAR</button>
+  <button (click)="setEnabled(true)" *ngIf="!mostrar_videojuegos">MOSTRAR</button>
+ 
+  <Videojuego *ngIf="mostrar_videojuegos==true"></Videojuego>
   <zapatillas></zapatillas>
+  <cursos></cursos>
 </div>
