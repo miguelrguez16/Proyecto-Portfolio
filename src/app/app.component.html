@@ -1,5 +1,11 @@
-<div>
+<div [ngStyle]="{
+  'background':fondo, 'color':color,
+  'padding':'20px',
+  'border':'5px solid black',
+  'margin': '0px auto'
+}">
   <h1>{{title}}</h1>
+  <h3>{{descripcion}}</h3>
   <p> Bienvenidos</p>
   <button (click)="setEnabled(false)" *ngIf="mostrar_videojuegos">OCULTAR</button>
   <button (click)="setEnabled(true)" *ngIf="!mostrar_videojuegos">MOSTRAR</button>
