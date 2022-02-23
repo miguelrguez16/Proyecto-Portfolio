@@ -10,19 +10,19 @@ export class VideojuegoComponent implements OnInit,DoCheck,OnDestroy {
         this.titulo = "Componente de videojuegos";
         this.listado= "Listado juegos favs";
 
-        console.log("Videojuego Contructor cargado");
+       // console.log("Videojuego Contructor cargado");
     }
     public titulo:string;
     public listado:string;
 
     ngOnInit(): void {
         // Se ejecuta nada mas cargarse
-        console.log("Videojuego OnInit cargado");
+       // console.log("Videojuego OnInit cargado");
     }
 
     // con cada cambio del componente este se 
     ngDoCheck(): void {
-        console.log("Videojuego ngDoCheck cargado");
+      //  console.log("Videojuego ngDoCheck cargado");
     }
     
     public cambiarTitulo():void{
@@ -30,6 +30,6 @@ export class VideojuegoComponent implements OnInit,DoCheck,OnDestroy {
     }
 
     ngOnDestroy(): void {
-        console.log("OnDEstroy Ejecutado")
+      //  console.log("OnDEstroy Ejecutado")
     }
 }
