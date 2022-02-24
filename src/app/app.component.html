@@ -1,17 +1,13 @@
-<div [ngStyle]="{
-  'background':fondo, 'color':color,
-  'padding':'20px',
-  'border':'5px solid black',
-  'margin': '0px auto'
-}">
-  <h1>{{title}}</h1>
-  <h3>{{descripcion}}</h3>
-  <!--
-  <button (click)="setEnabled(false)" *ngIf="mostrar_videojuegos">OCULTAR</button>
-  <button (click)="setEnabled(true)" *ngIf="!mostrar_videojuegos">MOSTRAR</button>
- 
-  <Videojuego *ngIf="mostrar_videojuegos==true"></Videojuego>
-  <cursos></cursos>
-  <zapatillas></zapatillas>-->
-  <router-outlet></router-outlet>
-</div>
+<h1>{{ title }}</h1>
+<h3>{{ descripcion }}</h3>
+<nav>
+  <a [routerLink]="['/home']" [routerLinkActive]="['active']">
+    HOME</a>&nbsp;
+  <a [routerLink]="['/zapatillas']" [routerLinkActive]="['active']">
+    ZAPATILLAS</a>&nbsp;
+  <a [routerLink]="['/cursos']" [routerLinkActive]="['active']">
+    CURSOS</a>&nbsp;
+  <a [routerLink]="['/videojuego']" [routerLinkActive]="['active']">
+    VIDEOJUEGOS</a>&nbsp;
+</nav>
+<router-outlet></router-outlet>
