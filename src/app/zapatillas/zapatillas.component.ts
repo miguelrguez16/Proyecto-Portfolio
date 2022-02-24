@@ -1,3 +1,4 @@
+import { trimTrailingNulls } from '@angular/compiler/src/render3/view/util';
 import { Component, OnInit } from '@angular/core';
 import { Zapatilla } from '../models/zapatilla';
 
@@ -10,6 +11,7 @@ export class ZapatillasComponent implements OnInit {
   public zapas: Array<Zapatilla>;
   public marcas: Array<String>;
   public color: string;
+  public mi_marca:string;
 
   constructor() {
     this.titulo = 'Componente de Zapatillas';
@@ -23,7 +25,7 @@ export class ZapatillasComponent implements OnInit {
     ];
     this.marcas = new Array();
     this.color = "Green";
-
+    this.mi_marca ="";
 
     console.log('Cargado Zapatillas');
   }
@@ -39,4 +41,18 @@ export class ZapatillasComponent implements OnInit {
     });
     console.log(this.marcas);
   }
+
+  showMiMarca(){
+      alert(this.mi_marca);
+  }
+
+  addMiMarca(){
+    this.mi_marca =this.mi_marca.trim();
+      if(!this.marcas.includes(this.mi_marca))
+            this.marcas.push(this.mi_marca)
+  }
+  removeMarcaSelected(index:number){
+      this.marcas.splice(index,1);
+  }
+
 }
