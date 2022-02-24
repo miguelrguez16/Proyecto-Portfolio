@@ -8,6 +8,7 @@ import { Zapatilla } from '../models/zapatilla';
 export class ZapatillasComponent implements OnInit {
   public titulo: string;
   public zapas: Array<Zapatilla>;
+  public marcas: Array<String>;
 
   constructor() {
     this.titulo = 'Componente de Zapatillas';
@@ -16,10 +17,21 @@ export class ZapatillasComponent implements OnInit {
       new Zapatilla('Reebok Classic', 'Reebok', 60, 'azul', true),
       new Zapatilla('Nike Classic', 'Nike', 75, 'white', false),
       new Zapatilla('Fila Classic', 'Fila', 90, 'green', true),
+      new Zapatilla('Fila Feel', 'Fila', 90, 'azul',false),
+
     ];
+    this.marcas = new Array();
     console.log('Cargado Zapatillas');
   }
   ngOnInit(): void {
     console.table(this.zapas);
+    this.getMarcas();
+  }
+
+  getMarcas() {
+    this.zapas.forEach((zapa, index) => {
+      if (!this.marcas.includes(zapa.marca)) this.marcas.push(zapa.marca);
+    });
+    console.log(this.marcas);
   }
 }
