@@ -2,3 +2,21 @@
 *{
     font-family: Arial, Helvetica, sans-serif;
 }
+.altoPrecio{
+    color:green;
+    font-size: 18px;
+}
+button{
+    background: #82916A;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+.botones{
+    background: #E8DFCE !important;
+}
+.subrayado{
+    text-decoration: underline;
+}
+.fondoRojo{
+    background: red;
+}
