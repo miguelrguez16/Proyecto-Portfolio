@@ -11,7 +11,7 @@
   <li *ngFor="let deportiva of zapas">
     <span
       [ngStyle]="{'text-decoration': !deportiva.stock ? 'line-through' : 'none'}" >
-      {{ deportiva.nombre }} : {{ deportiva.precio }}€
+      {{ deportiva.nombre }} - color: {{deportiva.color}} : {{ deportiva.precio }}€
     </span>
     <!-- <span *ngIf="deportiva.precio <=80" [style]="'background:green'"> !En OFERTA</span>-->
     <span
@@ -26,4 +26,12 @@
       OUT OF STOCK
     </span>
   </li>
+</ul>
+<p> Color de la mayoria de las zapas son </p>
+<ul [ngSwitch]="color">
+    <li *ngSwitchCase="'Yellow'"> El color predominante es el <span style="background: yellow;">Yellow</span></li>
+    <li *ngSwitchCase="'Green'">El color predominante es el <span style="background: Green;">Green</span></li>
+    <li *ngSwitchCase="'Blue'">El color predominante es el <span style="background: Blue;">Blue</span></li>
+    <li *ngSwitchCase="'Orange'">El color predominante es el <span style="background: Orange;">Orange</span></li>
+    <li *ngSwitchCase="'Grey'">El color predominante es el <span style="background: Grey;">Grey</span></li>
 </ul>

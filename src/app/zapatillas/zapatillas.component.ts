@@ -9,22 +9,27 @@ export class ZapatillasComponent implements OnInit {
   public titulo: string;
   public zapas: Array<Zapatilla>;
   public marcas: Array<String>;
+  public color: string;
 
   constructor() {
     this.titulo = 'Componente de Zapatillas';
     this.zapas = [
-      new Zapatilla('Adidas Classic', 'Adidas', 110, 'green', true),
-      new Zapatilla('Reebok Classic', 'Reebok', 60, 'azul', true),
-      new Zapatilla('Nike Classic', 'Nike', 75, 'white', false),
-      new Zapatilla('Fila Classic', 'Fila', 90, 'green', true),
-      new Zapatilla('Fila Feel', 'Fila', 90, 'azul',false),
-
+      new Zapatilla('Adidas Classic', 'Adidas', 110, 'Green', true),
+      new Zapatilla('Reebok Classic', 'Reebok', 60, 'Blue', true),
+      new Zapatilla('Nike Classic', 'Nike', 75, 'Yellow', false),
+      new Zapatilla('Fila Classic', 'Fila', 90, 'Green', true),
+      new Zapatilla('Fila Feel', 'Fila', 90, 'Orange',false),
+      new Zapatilla('Quechua Feel', 'Quechua', 90, 'Grey',false),
     ];
     this.marcas = new Array();
+    this.color = "Green";
+
+
     console.log('Cargado Zapatillas');
   }
   ngOnInit(): void {
     console.table(this.zapas);
+    console.log(this.color);
     this.getMarcas();
   }
 
