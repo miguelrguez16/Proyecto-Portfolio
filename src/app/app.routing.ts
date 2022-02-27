@@ -7,6 +7,9 @@ import { ZapatillasComponent } from "./zapatillas/zapatillas.component";
 import { VideojuegoComponent } from "./videojuego/videojuego.component";
 import { CursosComponent } from "./cursos/cursos.component";
 import { HomeComponent } from "./home/home.component";
+import { ExternoComponent } from "./externo/externo.component";
+
+
 // array de conf de las routas
 const appRutas: Routes  =[
     {path: '', component: HomeComponent},
@@ -15,6 +18,7 @@ const appRutas: Routes  =[
     {path: 'videojuego', component: VideojuegoComponent},
     {path: 'cursos', component: CursosComponent},
     {path: 'cursos/:nombre/:followers', component: CursosComponent},
+    {path: 'externo', component: ExternoComponent},
     {path: '**', component: HomeComponent}
 ];
 

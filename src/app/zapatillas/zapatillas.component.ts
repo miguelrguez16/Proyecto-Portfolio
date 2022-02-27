@@ -23,7 +23,6 @@ export class ZapatillasComponent implements OnInit {
   }
   ngOnInit(): void {
     this.zapas = this._zapatillaService.getZapatillas();
-
     console.log(this.color);
     this.getMarcas();
   }

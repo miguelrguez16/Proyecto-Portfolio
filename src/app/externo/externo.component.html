@@ -1,0 +1,11 @@
+<input type="text" [(ngModel)]="_userId" (keyup.enter)="cargaUsuario()"/>
+<hr />
+<label>{{fecha | date: 'dd-MM-YYYY' }}</label>
+<label>{{fecha | date: 'fullDate' | uppercase}}</label>
+<label>{{"HOLA"| lowercase}}</label>
+<div *ngIf="!_user">Cargando... </div>
+
+<div *ngIf="_user">
+  <h2>{{ _user.first_name }} {{ _user.last_name }}</h2>
+  <img src="{{ _user.avatar }}" width="200" />
+</div>

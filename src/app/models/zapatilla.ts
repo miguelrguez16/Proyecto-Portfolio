@@ -6,7 +6,7 @@ export class Zapatilla {
         public color: string,
         public stock: boolean
     ){
-
+ 
     }
 }
 
