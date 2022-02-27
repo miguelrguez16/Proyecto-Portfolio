@@ -11,3 +11,18 @@
   <h2>{{ _user.first_name }} {{ _user.last_name }}</h2>
   <img src="{{ _user.avatar }}" width="200" />
 </div>
+
+
+<form #newUser="ngForm" (ngSubmit)="onSubmit(newUser)">
+  <label for="name">Nombre</label>
+  <input type="text" name="name" requiered #name="ngModel" [(ngModel)]="new_user.name"/>
+  
+  <label for="trabajo">Trabajo</label>
+  <input type="text" name="trabajo" requiered #trabajo="ngModel" [(ngModel)]="new_user.job"/>
+
+  <input type="submit" value="Registrar" [disabled]="!newUser.form.valid"/>
+</form>
+
+<div *ngIf="nuevo_usuario">
+  <p>ID del usuario:{{nuevo_usuario}}</p>
+</div>
