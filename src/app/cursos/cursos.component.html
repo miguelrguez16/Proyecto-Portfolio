@@ -1,1 +1,5 @@
-<p>cursos works!</p>
+<h1>Componente de cursos!</h1>
+
+<button (click)="redirigir()" > Ir a zapatillas</button>
+<h3 *ngIf="_nombre!=''">Bienvenido {{_nombre}}</h3>
+<h3 *ngIf="_followers!=-1">Nº Seguidores: {{_followers}}</h3>
