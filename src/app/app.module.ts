@@ -12,6 +12,8 @@ import { CursosComponent } from './cursos/cursos.component';
 import { HomeComponent } from './home/home.component';
 import { ExternoComponent } from './externo/externo.component';
 
+import { CalculadoraPipe } from './pipes/calculadora.pipe';
+
 @NgModule({//Decorador que configura el modulo
   declarations: [ // carga las declaraciones
     //Aqui se cargan los componentes
@@ -20,7 +22,8 @@ import { ExternoComponent } from './externo/externo.component';
     ZapatillasComponent,
     CursosComponent,
     HomeComponent,
-    ExternoComponent
+    ExternoComponent,
+    CalculadoraPipe
   ],
   imports: [ // carga los demas imports
     BrowserModule,
