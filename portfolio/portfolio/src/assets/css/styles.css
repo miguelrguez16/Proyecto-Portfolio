@@ -17,7 +17,7 @@
 }
 
 body{
-	font-family:  Arial,"yanone", Helvetica;
+	font-family: "yanone", Arial, Helvetica;
 	font-size: 20px;
 	background: url("../img/pattern.png");
 	background-attachment: fixed;
@@ -33,15 +33,15 @@ body{
 header{
 	display: block;
 	width: 100%;
-	height: 77px;
-	background: rgba(53, 103, 164, 0.836);
+	height: 90px;
+	background: rgba(53, 103, 164, 0.8);
 	position: fixed;
 	text-transform: uppercase;
 }
 
 header ul{
 	display: block;
-	width: 50%;	
+	width: 40%;
 	height: inherit;
 	margin: 0px auto;
 	margin-top: -3px;
@@ -51,7 +51,7 @@ header ul li{
 	display: inline-block;
 	margin: 0px auto;
 	text-align: center;
-	line-height: 77px;
+	line-height: 88px;
 }
 
 header a{
@@ -66,7 +66,7 @@ header a{
 
 header a:hover,
 .actived{
-	background: rgba(47, 4, 148, 0.8);
+	background: rgba(0,0,0,0.8);
 }
 
 /*Logotipo*/
@@ -104,9 +104,9 @@ header a:hover,
 footer{
 	width: 75%;
 	margin: 0px auto;
-	text-align: center;
 	padding-top: 15px;
 	color: rgba(0, 0, 0, 0.5);
+	text-align: center;
 }
 
 
@@ -116,7 +116,7 @@ footer{
 	margin: 0px auto;
 	text-align: center;
 	margin-top: 20px;
-	margin-bottom: 60px;
+	margin-bottom: 70px;
 }
 
 #title h1{
