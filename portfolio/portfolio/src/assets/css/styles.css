@@ -17,7 +17,7 @@
 }
 
 body{
-	font-family: "yanone", Arial, Helvetica;
+	font-family:  Arial,"yanone", Helvetica;
 	font-size: 20px;
 	background: url("../img/pattern.png");
 	background-attachment: fixed;
@@ -34,14 +34,14 @@ header{
 	display: block;
 	width: 100%;
 	height: 90px;
-	background: rgba(53, 103, 164, 0.8);
+	background: rgba(53, 103, 164, 0.836);
 	position: fixed;
 	text-transform: uppercase;
 }
 
 header ul{
 	display: block;
-	width: 40%;
+	width: 38%;	
 	height: inherit;
 	margin: 0px auto;
 	margin-top: -3px;
@@ -104,6 +104,7 @@ header a:hover,
 footer{
 	width: 75%;
 	margin: 0px auto;
+	text-align: center;
 	padding-top: 15px;
 	color: rgba(0, 0, 0, 0.5);
 }
