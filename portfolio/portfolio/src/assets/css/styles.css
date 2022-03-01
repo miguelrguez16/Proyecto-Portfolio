@@ -33,7 +33,7 @@ body{
 header{
 	display: block;
 	width: 100%;
-	height: 90px;
+	height: 77px;
 	background: rgba(53, 103, 164, 0.836);
 	position: fixed;
 	text-transform: uppercase;
@@ -41,7 +41,7 @@ header{
 
 header ul{
 	display: block;
-	width: 38%;	
+	width: 50%;	
 	height: inherit;
 	margin: 0px auto;
 	margin-top: -3px;
@@ -51,7 +51,7 @@ header ul li{
 	display: inline-block;
 	margin: 0px auto;
 	text-align: center;
-	line-height: 88px;
+	line-height: 77px;
 }
 
 header a{
@@ -66,7 +66,7 @@ header a{
 
 header a:hover,
 .actived{
-	background: rgba(0,0,0,0.8);
+	background: rgba(47, 4, 148, 0.8);
 }
 
 /*Logotipo*/
@@ -116,7 +116,7 @@ footer{
 	margin: 0px auto;
 	text-align: center;
 	margin-top: 20px;
-	margin-bottom: 70px;
+	margin-bottom: 60px;
 }
 
 #title h1{
