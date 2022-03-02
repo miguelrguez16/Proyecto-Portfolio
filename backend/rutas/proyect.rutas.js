@@ -9,7 +9,7 @@ var multipart = require("connect-multiparty");
 var multipartMiddleware = multipart({uploadDir: "./uploads"})
 
 router.get('/home', ProyectController.home);
-router.post('/test', ProyectController.test);
+router.get('/test', ProyectController.test);
 router.post('/save-project', ProyectController.saveProyect);
 router.get('/project/:id?', ProyectController.getProyect);
 router.get('/projects', ProyectController.getProyects);

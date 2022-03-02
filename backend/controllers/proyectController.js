@@ -12,8 +12,9 @@ var controller = {
     });
   },
   test: function (req, res) {
+    console.log(req);
     return res.status(200).send({
-      message: " Welcome Res",
+      message: " Welcome Res"
     });
   },
   saveProyect: function (req, res) {
@@ -34,7 +35,7 @@ var controller = {
 
       if (!projectStored)
         return res.status(404).send({ message: "NO se ha podido guardar" });
-      console.log("save-proyect: OK");
+      console.log("save-proyect: OK ", projectStored.id);
       return res.status(200).send({ project: projectStored });
     });
   },

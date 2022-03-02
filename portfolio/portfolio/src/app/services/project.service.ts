@@ -16,5 +16,15 @@ export class ProjectService {
     testService():string{
         return "probando servicio";
     }
+    saveProyect(newProject:Project):Observable<any>{
+        let params = JSON.stringify(newProject);
+        // como se va a enviar la info
+        let headers = new HttpHeaders()
+        .set("Content-Type","application/json");
 
+        return this._http.post(this.url +"save-project", params,{headers:headers} );
+    }
+    
+
+    
 }

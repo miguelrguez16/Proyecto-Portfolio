@@ -244,10 +244,9 @@ form input[disabled]{
 }
 
 .form_error{
-	font-size: 13px;
+	font-size: 19px;
 	padding: 3px;
-	background: red;
-	color:white;
+	color: red;
 	margin-left: 5px;
 }
 
