@@ -1,14 +1,11 @@
-
 <div class="container">
-<h2>Proyectos</h2>
+  <h2>Proyectos</h2>
 
-    <ul>
-        <li *ngFor="let item of _projects;">
-<img src="{{item.image}}" width="100px" height="100px"/>
-                <h3>{{item.name}}</h3>
-                <p>{{item.description}}</p>
-    
+  <ul>
+    <li *ngFor="let item of _projects" class="project">
+      <img src="{{ _url + 'get-image/' + item.image }}" *ngIf="item.image" />
+      <h3>{{ item.name }}</h3>
+      <p>{{ item.description }}</p>
     </li>
-        
-    </ul>
+  </ul>
 </div>

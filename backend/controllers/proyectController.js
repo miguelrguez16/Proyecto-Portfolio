@@ -4,6 +4,10 @@
 var Project = require("../models/proyect");
 var fs = require("fs");
 
+// permite cargar rutas de nuestro propio entorno
+var path = require("path");
+
+
 // CONTROLADOR
 var controller = {
   home: function (req, res) {
@@ -56,45 +60,36 @@ var controller = {
     });
   },
   getProyects: function (req, res) {
-    Project.find({})
-      .sort("+year")
+    Project.find({}).sort("+year")
       .exec((err, projects) => {
         if (err)
-          return res
-            .status(500)
-            .send({ message: "ERROR DEVOLVER DATOS 2", err: err });
-        if (!projects)
-          return res
-            .status(404)
-            .send({ message: "NO HAY PROYECTOS PARA MOSTRAR" });
-        console.log("obteniendo proyectos");
+          return res.status(500).send({ message: "ERROR DEVOLVER DATOS 2", err: err });
 
+        if (!projects)
+          return res.status(404).send({ message: "NO HAY PROYECTOS PARA MOSTRAR" });
+
+        console.log("obteniendo proyectos");
         return res.status(200).send({ projects });
       });
   },
   updateProyect: function (req, res) {
     var searchID = req.params.id;
     if (searchID == null)
-      return res
-        .status(404)
-        .send({ message: "NO EXISTE EL PROYECTO A ACTUALIZAR:1" });
+      return res.status(404).send({ message: "NO EXISTE EL PROYECTO A ACTUALIZAR:1" });
     console.log("actualizar: ", searchID);
     // obtenemos los valores pasados en la peticion
     var updateValues = req.body;
 
-    Project.findByIdAndUpdate(
-      searchID,
-      updateValues,
-      { new: true },
-      (err, proyectUpdated) => {
+    Project.findByIdAndUpdate(searchID,updateValues,{ new: true },(err, proyectUpdated) => {
         if (err)
-          return res
-            .status(500)
-            .send({ message: "ERROR ACTUALIZAR DATOS", err: err });
+          return res.status(500).send({ 
+            message: "ERROR ACTUALIZAR DATOS", err: err 
+          });
+
         if (!proyectUpdated)
-          return res
-            .status(404)
-            .send({ message: "NO HAY PROYECTO PARA EDITAR" });
+          return res.status(404).send({ 
+            message: "NO HAY PROYECTO PARA EDITAR" 
+          });
 
         return res.status(200).send({ proyect: proyectUpdated });
       }
@@ -147,6 +142,21 @@ var controller = {
       return res.status(200).send({message : fileName});
     }
   },
+  getImageFile: function (req, res) {
+    var image = req.params.image;
+    var path_file ='./uploads/'+image;
+    console.log("obteniendo imagen: ", image);
+    fs.exists(path_file, (exists)=> {
+        if(exists){
+          return res.sendFile(path.resolve(path_file));
+        }else {
+          return res.status(200).send({
+              message: "No existe la imagen"
+              });
+        }
+    })
+
+  }
 };
 
 module.exports = controller;
