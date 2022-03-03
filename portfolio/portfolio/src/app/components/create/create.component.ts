@@ -23,6 +23,7 @@ export class CreateComponent implements OnInit {
   ) { 
     this._title ="Crear nuevo proyecto:";
     this._project = new Project("","","","",2022,"","");
+
   }
 
   ngOnInit(): void {  }

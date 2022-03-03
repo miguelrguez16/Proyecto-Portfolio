@@ -13,23 +13,32 @@ export class ProjectService {
     ){
         this.url = Global.url;
     }
+    
     testService():string{
         return "probando servicio";
     }
     saveProyect(newProject:Project):Observable<any>{
         let params = JSON.stringify(newProject);
         // como se va a enviar la info
-        let headers = new HttpHeaders()
-        .set("Content-Type","application/json");
-
+        let headers = new HttpHeaders().set("Content-Type","application/json");
+        console.log("guardando proyecto ", newProject._id);
+       
         return this._http.post(this.url +"save-project", params,{headers:headers} );
     }
     
     getProjects():Observable<any>{
         let headers = new HttpHeaders()
         .set("Content-Type","application/json");
-
+        console.log("obteniendo todos los proyectos ");
+     
         return this._http.get(this.url + "projects", {headers: headers});
+    }
+
+
+    getProject(id:string):Observable<any>{
+        let headers = new HttpHeaders().set("Content-Type","application/json");
+        console.log("obteniendo proyecto ", id)
+        return this._http.get(this.url + "project/" + id, {headers:headers})
     }
 
     
