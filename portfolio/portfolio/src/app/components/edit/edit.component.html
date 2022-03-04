@@ -1,6 +1,7 @@
+<p>edit works!</p>
 <div class="container">
     <h2>
-        {{_title}}
+        {{_project.name}}
     </h2>
 
     <div class="message success" *ngIf="_status=='success'">
@@ -9,7 +10,7 @@
          
     <div class="message failed" *ngIf="_status=='failed'"> Error al crear el proyecto</div>
  
-    <form #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)">
+    <form #projectForm="ngForm" (ngSubmit)="actualizar(projectForm)">
         <p>
             <label for="name">Nombre</label>
             <input type="text" name="name" #name="ngModel" [(ngModel)]="_project.name" required/>
@@ -45,9 +46,12 @@
         </p>
         <p>
             <label for="image">Image:</label>
+            <span class="image" *ngIf="_project.image">
+                <img src="{{ _url + 'get-image/' + _project.image }}"  />
+            </span>
+
             <input type="file" name="image" placeholder="Subir imagen" (change)="fileChangeEvent($event)" required/>
         </p>
-        <input type="submit" value="Enviar" [disabled]="!projectForm.form.valid"/>
-        
+        <input type="submit" value="Guardar Cambios" [disabled]="!projectForm.form.valid"/>
     </form>
 </div>

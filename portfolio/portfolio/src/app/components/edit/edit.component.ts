@@ -3,16 +3,20 @@ import { Project } from 'src/app/models/project.model';
 import { Global } from 'src/app/services/global';
 import { ProjectService } from 'src/app/services/project.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { throwError } from 'rxjs';
 
 @Component({
-  selector: 'app-detail',
-  templateUrl: './detail.component.html',
-  styleUrls: ['./detail.component.css'],
+  selector: 'app-edit',
+  templateUrl: './edit.component.html',
+  styleUrls: ['./edit.component.css'],
   providers: [ProjectService]
 })
-export class DetailComponent implements OnInit {
+export class EditComponent implements OnInit {
   public _project:Project;
   public _url:String;
+  public _status:String;
+  public _savedProject:Project;
+  public _filesToUpload: Array<File> = [];
 
   constructor(
     private _projectService: ProjectService,
@@ -20,11 +24,13 @@ export class DetailComponent implements OnInit {
     private _route:ActivatedRoute
   ) { 
       this._url = Global.url;
+      this._status = "initial";
       this._project = new Project("","","","",2022,"","");
+      this._savedProject = new Project("","","","",2022,"","");
   }
 
   ngOnInit(): void {
-    console.log("inicializando busqueda");
+    //cargamos el proyecto a editar
     this._route.params.subscribe(
       params => {
         let id = params["id"];
@@ -43,29 +49,17 @@ export class DetailComponent implements OnInit {
     );
   }
 
-  deleteProject2(id:string){
-    this._projectService.deleteProject(id).subscribe({
-      next: (response: Project) =>  console.log("OKEY"),
-      error: (err: Error) =>console.error("Error: ", err)
+  actualizar(form:any){
+    this._projectService.updateProject(this._project).subscribe({
+     
     })
   }
-  
-  /**
-   * 
-   * @param id 
-   */
-  deleteProject(id:string){
-    this._projectService.deleteProject(id).subscribe(
-      response =>{
-        this._router.navigate(['/proyectos']);
-        
-      },err=>{console.error(err)}
-    );
-  }
-  updateProject(id:string){
-    
-        this._router.navigate(['/editar', id]);
-        
+
+  fileChangeEvent(fileInput:any){
+    //console.log("ARCVHIVO");
+    //console.log(fileInput);
+    this._filesToUpload = <Array<File>> fileInput.target.files;
 
   }
+
 }
