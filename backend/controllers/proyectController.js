@@ -39,11 +39,11 @@ var controller = {
 
       if (!projectStored)
         return res.status(404).send({ message: "NO se ha podido guardar" });
-      console.log("save-proyect: OK ", projectStored.id);
+      console.log("save-project: OK ", projectStored.id);
       return res.status(200).send({ project: projectStored });
     });
   },
-  getProyect: function (req, res) {
+  getProject: function (req, res) {
     var searchID = req.params.id;
 
     if (searchID == null)
@@ -59,7 +59,7 @@ var controller = {
       return res.status(200).send({ project });
     });
   },
-  getProyects: function (req, res) {
+  getProjects: function (req, res) {
     Project.find({}).sort("+year")
       .exec((err, projects) => {
         if (err)
@@ -72,7 +72,7 @@ var controller = {
         return res.status(200).send({ projects });
       });
   },
-  updateProyect: function (req, res) {
+  updateProject: function (req, res) {
     var searchID = req.params.id;
     if (searchID == null)
       return res.status(404).send({ message: "NO EXISTE EL PROYECTO A ACTUALIZAR:1" });
@@ -91,11 +91,11 @@ var controller = {
             message: "NO HAY PROYECTO PARA EDITAR" 
           });
 
-        return res.status(200).send({ proyect: proyectUpdated });
+        return res.status(200).send({ project: proyectUpdated });
       }
     );
   },
-  deleteProyect: function (req, res) {
+  deleteProject: function (req, res) {
     var searchID = req.params.id;
     console.log("eliminando: ", searchID);
     Project.findByIdAndRemove(searchID, (err, proyectDelete) => {
@@ -109,7 +109,7 @@ var controller = {
           message: "NO HAY PROYECTO PARA ELIMINAR",
         });
 
-      return res.status(200).send({ proyect: proyectDelete });
+      return res.status(200).send({ project: proyectDelete });
     });
   },
   uploadImage: function (req, res) {
@@ -128,7 +128,7 @@ var controller = {
             if (err) return res.status(500).send({ message: "ERROR: IMAGEN NO SUBIDA", err: err });
             if (!proyectUpdate) return res.status(404).send({ message: "ERROR: NO EXISTE EL PRYECTO" });
   
-            return res.status(200).send({ proyect: proyectUpdate });
+            return res.status(200).send({ project: proyectUpdate });
           }
         );
       }else{

@@ -27,7 +27,7 @@ export class ProjectsComponent implements OnInit {
     this._projectService.getProjects().subscribe(
       response =>{
         this._projects = response.projects;
-        console.table(response.projects);
+       // console.table(response.projects);
       },err=>{console.error(err)}
     );
   }

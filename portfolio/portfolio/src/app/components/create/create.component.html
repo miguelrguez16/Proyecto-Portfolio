@@ -5,8 +5,8 @@
 
     <div class="message success" *ngIf="_status=='success'">
          Proyecto creado correctamente, puedes verlo 
-         <a [routerLink]="['/proyecto', '{{_project._id}}']">aquí</a></div>
-
+         <a [routerLink] = "['/proyecto', _savedProject._id]">aquí</a></div>
+         
     <div class="message failed" *ngIf="_status=='failed'"> Error al crear el proyecto</div>
  
     <form #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)">
@@ -45,7 +45,7 @@
         </p>
         <p>
             <label for="image">Image:</label>
-            <input type="file" name="image" placeholder="Subir imagen" (change)="fileChangeEvent($event)"/>
+            <input type="file" name="image" placeholder="Subir imagen" (change)="fileChangeEvent($event)" required/>
         </p>
         <input type="submit" value="Enviar" [disabled]="!projectForm.form.valid"/>
     </form>

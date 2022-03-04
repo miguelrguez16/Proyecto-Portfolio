@@ -17,12 +17,15 @@ export class CreateComponent implements OnInit {
   public _status:string="initial";
   public _filesToUpload: Array<File> = [];
 
+  public _savedProject:Project;
+
   constructor(
     private _projectService:ProjectService,
     private _uploadService:UploadService
   ) { 
     this._title ="Crear nuevo proyecto:";
     this._project = new Project("","","","",2022,"","");
+    this._savedProject = new Project("","","","",2022,"","");
 
   }
 
@@ -30,13 +33,14 @@ export class CreateComponent implements OnInit {
 
   onSubmit(form:any){ 
     console.log(this._project);
-    this._projectService.saveProyect(this._project).subscribe(
+    this._projectService.saveProject(this._project).subscribe(
       (response) =>{ 
         this._uploadService.makeFileRequest(Global.url + "upload-image/" + response.project._id,[],this._filesToUpload,'image')
         .then((result:any)=> {
           this._status = "success";
-          console.log(result);
-          console.log("Respuesta backend: ",response);
+          //console.log(result);
+          this._savedProject = result.project;
+         // console.log("REsultado de devuelto:" ,this._savedProject)
           form.reset();
         });
         
@@ -51,7 +55,7 @@ export class CreateComponent implements OnInit {
   }
   otro(form:any){ 
     //console.log(this._project);
-    this._projectService.saveProyect(this._project).subscribe(
+    this._projectService.saveProject(this._project).subscribe(
       {
         next: (response: Project) =>  this._status = "success",
         error: (err: Error) => this._status = "error" ,
@@ -63,8 +67,8 @@ export class CreateComponent implements OnInit {
 
 
   fileChangeEvent(fileInput:any){
-    console.log("ARCVHIVO");
-    console.log(fileInput);
+    //console.log("ARCVHIVO");
+    //console.log(fileInput);
     this._filesToUpload = <Array<File>> fileInput.target.files;
 
   }

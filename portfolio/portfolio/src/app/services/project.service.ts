@@ -17,7 +17,7 @@ export class ProjectService {
     testService():string{
         return "probando servicio";
     }
-    saveProyect(newProject:Project):Observable<any>{
+    saveProject(newProject:Project):Observable<any>{
         let params = JSON.stringify(newProject);
         // como se va a enviar la info
         let headers = new HttpHeaders().set("Content-Type","application/json");
@@ -39,6 +39,12 @@ export class ProjectService {
         let headers = new HttpHeaders().set("Content-Type","application/json");
         console.log("obteniendo proyecto ", id)
         return this._http.get(this.url + "project/" + id, {headers:headers})
+    }
+
+    deleteProject(id:string):Observable<any>{
+        let headers = new HttpHeaders().set("Content-Type","application/json");
+        console.log("eliminando proyecto ", id)
+        return this._http.delete(this.url + "project/" + id, {headers:headers})
     }
 
     
