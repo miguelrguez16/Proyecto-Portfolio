@@ -3,13 +3,12 @@ import { Project } from 'src/app/models/project.model';
 import { Global } from 'src/app/services/global';
 import { ProjectService } from 'src/app/services/project.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { throwError } from 'rxjs';
-
+import { UploadService } from 'src/app/services/upload.service';
 @Component({
   selector: 'app-edit',
   templateUrl: './edit.component.html',
   styleUrls: ['./edit.component.css'],
-  providers: [ProjectService]
+  providers: [ProjectService, UploadService]
 })
 export class EditComponent implements OnInit {
   public _project:Project;
@@ -20,6 +19,7 @@ export class EditComponent implements OnInit {
 
   constructor(
     private _projectService: ProjectService,
+    private _uploadService: UploadService,
     private _router: Router,
     private _route:ActivatedRoute
   ) { 
@@ -60,6 +60,27 @@ export class EditComponent implements OnInit {
     //console.log(fileInput);
     this._filesToUpload = <Array<File>> fileInput.target.files;
 
+  }
+
+  onSubmit(){
+    this._projectService.updateProject(this._project).subscribe(
+      (response) =>{ 
+        if(this._filesToUpload.length > 0){
+          this._uploadService.makeFileRequest(
+            Global.url + "upload-image/" + response.project._id,[],this._filesToUpload,'image')
+          .then((result:any)=> {
+            this._status = "success";
+            this._savedProject = result.project;
+          });
+        }else{
+          this._status = "success";
+            this._savedProject = response.project;
+        }    
+      }, 
+      (error)=>{
+        console.log(error);
+      }
+    )
   }
 
 }
