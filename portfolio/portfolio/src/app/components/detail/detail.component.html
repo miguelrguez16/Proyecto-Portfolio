@@ -7,9 +7,13 @@
       <h3>{{_project.description}}</h3>
       <p>{{_project.category}}</p>
       <p>{{_project.langs}}</p>
-      <p> 
+      <p *ngIf="!_confirmDelete"> 
         <a (click)="updateProject(_project._id)" class="button-edit">EDITAR</a>
-        <a (click)="deleteProject(_project._id)" class="button-delete">BORRAR</a>
+        <a (click)="setConfirm(true)" class="button-delete">¿BORRAR?</a>
+      </p>
+      <p *ngIf="_confirmDelete"> 
+        <a (click)="setConfirm(false)" class="button-edit">Cancelar</a>
+        <a (click)="deleteProject(_project._id)" class="button-delete">ELIMINAR</a>
       </p>
 
     </div>

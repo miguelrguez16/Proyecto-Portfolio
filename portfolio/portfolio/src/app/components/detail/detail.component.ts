@@ -13,6 +13,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class DetailComponent implements OnInit {
   public _project:Project;
   public _url:String;
+  public _confirmDelete: boolean;
 
   constructor(
     private _projectService: ProjectService,
@@ -21,6 +22,7 @@ export class DetailComponent implements OnInit {
   ) { 
       this._url = Global.url;
       this._project = new Project("","","","",2022,"","");
+      this._confirmDelete = false;
   }
 
   ngOnInit(): void {
@@ -67,5 +69,9 @@ export class DetailComponent implements OnInit {
         this._router.navigate(['/editar', id]);
         
 
+  }
+
+  setConfirm(confirma:boolean){
+    this._confirmDelete=confirma;
   }
 }
