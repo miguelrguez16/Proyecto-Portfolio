@@ -9,7 +9,16 @@ export class ContactComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    $("header").css("background","#82916A");
+    $("logo").on("click", function(e){
+      //e.preventDefault();
+      $("logo").css("color","#CB8655");
+    });
+
+
+
+  
   }
 
 }
