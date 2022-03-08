@@ -2,11 +2,30 @@
   <h1>
     Contacto
   </h1>
+  <label>Ancho:</label>
+  <input type="number" [(ngModel)]="_widthSlider"/><br/>
+  <select [(ngModel)]="_captionsSlider">
+    <option value="true">Mostrar</option>
+    <option value="false">NO Mostrar</option>
+  </select>
+  <br/>
+  <button (click)="cargarSlider()"  class="button-edit">Cargar</button>
+  <button (click)="resetearSlider()"  class="button-delete">Resetear</button>
+  <br/> <br/> <br/>
+  
 
-  <input type="number" [(ngModel)]="_widthSlider"/>
 
-  <div *ngIf="_widthSlider">
-
+  <div *ngIf="_anchuraSlider>0">
+    
+    <app-slider 
+    [_anchura]="_anchuraSlider" 
+    [_captions]="_captionsSlider"
+    (emitirAutor)="conseguirAutor($event)"></app-slider>
   </div>
-  <app-slider></app-slider>
-</div>
+ 
+
+  {{_autor.nombre}}
+  {{_autor.web}}
+  {{_autor.libro}}
+
+</div> 

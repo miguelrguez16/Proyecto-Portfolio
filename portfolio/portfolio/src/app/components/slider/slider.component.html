@@ -1,6 +1,12 @@
 <div class="container">
+  Tamaño del slider: <strong>{{_anchura}}</strong>
     <div class="slider">
       <div> <img src="assets/img/imagen2.jpg"></div>
       <div> <img src="assets/img/imagen3.png"></div>
       <div> <img src="assets/img/imagen1.png"></div>
-    </div></div>
+    </div>
+
+    <button (click)="lanzarEvento($event)" class="button-emitir">
+      Conseguir Autor
+    </button>
+</div>

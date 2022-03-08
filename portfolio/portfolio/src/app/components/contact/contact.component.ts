@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AnyForUntypedForms } from '@angular/forms';
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
@@ -6,11 +7,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
   public _widthSlider!: number;
-  constructor() { }
+  public _anchuraSlider!:number;
+  public _captionsSlider:boolean;
 
-  ngOnInit() {
-    
-  
+  public _autor!:any;
+  constructor() {this._captionsSlider = false; }
+
+  ngOnInit() {  }
+
+  cargarSlider(){
+     this._anchuraSlider  = this._widthSlider;
+  }
+
+  resetearSlider(){
+    this._anchuraSlider = -1;
+  }
+
+  conseguirAutor(event:any){
+    console.log(event);
+    this._autor = event;
   }
 
 }
