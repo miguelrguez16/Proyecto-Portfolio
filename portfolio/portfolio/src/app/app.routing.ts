@@ -11,6 +11,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { ErrorComponent } from './components/error/error.component';
 import { DetailComponent } from "./components/detail/detail.component";
 import { EditComponent } from "./components/edit/edit.component";
+import { SliderComponent } from "./components/slider/slider.component";
 
 // array de conf de las routas
 const appRutas: Routes  =[
@@ -21,6 +22,7 @@ const appRutas: Routes  =[
     {path: 'contacto', component: ContactComponent},
     {path: 'proyecto/:id', component: DetailComponent},
     {path: 'editar/:id', component:EditComponent},
+    {path: 'slider', component:SliderComponent},
     {path: '**', component: ErrorComponent}
 ];
 
