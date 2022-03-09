@@ -2,6 +2,11 @@
   <h1>
     Contacto
   </h1>
+<div id="texto" #textos>
+  <p appResaltado > Envia tus dudas</p>
+</div>
+<button (click)="cargar()">Cargar</button>
+  <!--
   <label>Ancho:</label>
   <input type="number" [(ngModel)]="_widthSlider"/><br/>
   <select [(ngModel)]="_captionsSlider">
@@ -23,9 +28,9 @@
     (emitirAutor)="conseguirAutor($event)"></app-slider>
   </div>
  
-
+  
   {{_autor.nombre}}
   {{_autor.web}}
   {{_autor.libro}}
-
+-->
 </div> 
