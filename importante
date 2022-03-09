@@ -1,0 +1,7 @@
+lanzar backend
+    npm start
+lanzar angular
+    ng serve
+
+iniciar proyecto node
+    npm init
