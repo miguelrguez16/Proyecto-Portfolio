@@ -32,8 +32,15 @@ io.on('connection', function(socket){
     //console.log(socket);
     var ip = socket.handshake.address.split(":")[3];
     console.log("New Node connected from: " + ip);
-
+    //emitimos mensaje principal
     socket.emit('messages', messages);
+    // emitir nuevos mensajes
+    socket.on('add-message', function (data) {
+        messages.push(data);
+        // reenviamos a todos los mensajes de nuevo
+        socket.emit('messages', messages);
+      });
+
 });
 
 
