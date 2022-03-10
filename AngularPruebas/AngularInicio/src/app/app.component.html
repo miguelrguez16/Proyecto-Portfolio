@@ -1,0 +1,17 @@
+<h1>{{ title }}</h1>
+<h3>{{ descripcion }}</h3>
+<nav>
+  <a [routerLink]="['/home']" [routerLinkActive]="['active']">
+    HOME</a>&nbsp;
+  <a [routerLink]="['/zapatillas']" [routerLinkActive]="['active']">
+    ZAPATILLAS</a>&nbsp;
+  <a [routerLink]="['/cursos']" [routerLinkActive]="['active']">
+    CURSOS</a>&nbsp;
+  <a [routerLink]="['/videojuego']" [routerLinkActive]="['active']">
+    VIDEOJUEGOS</a>&nbsp;
+  <a [routerLink]="['/externo']" [routerLinkActive]="['active']"> 
+    EXTERNO</a>&nbsp;
+  <a [routerLink]="['/contacto']" [routerLinkActive]="['active']"> 
+    CONTACTO</a>&nbsp;
+</nav>
+<router-outlet></router-outlet>
