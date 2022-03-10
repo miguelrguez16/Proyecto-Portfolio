@@ -1,0 +1,13 @@
+body {
+    background: #E8DFCE;
+  }
+  
+  #logo {
+    background: #82916A;
+  }
+  #menu ul li:hover {
+    background: #82916A;
+  }
+  .button-more {
+    background: #CB8655;
+  }

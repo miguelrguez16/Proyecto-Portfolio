@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Mi primera pag web</title>
+  </head>
+  <body>
+    <!-- Encabezado-->
+    <h1>Mi primera pagina web</h1>
+
+    <!--menu-->
+    <ul>
+      <li><a href="index.html" title="Incio">Inicio</a></li>
+      <li><a href="contenidos.html" title="Contenidos">Contenidos</a></li>
+      <li><a href="contacto.html" title="Contacto">Contacto</a></li>
+      <li>
+        <a
+          href="https://blogtodolibrosypeliculas.blogspot.com/"
+          title="Todo libros y peliculas"
+          target="_blank"
+          >Libros y peliculas</a
+        >
+      </li>
+      <!-- con target _blank conseguimos que nos abra el enlace en una pestaña nueva -->
+    </ul>
+    <hr />
+    <!-- Contenido de index -->
+    <h2>Contacto</h2>
+    <form>
+      <p>
+        <label for="nombre">Nombre: </label><br />
+        <input type="text" name="nombre" />
+      </p>
+      <p>
+        <label for="biografia">Biografia:</label><br />
+        <textarea name="biografia"></textarea>
+      </p>
+      <p>
+        <label for="edad">Edad: </label><br />
+        <select name="edad">
+          <option value="menor">Menor</option>
+          <option value="mayor">Mayor</option>
+          <option value="mayor65">Mayor de 65</option>
+        </select>
+      </p>
+      <p>
+        <input type="submit" value="Enviar email" />
+      </p>
+    </form>
+  </body>
+</html>

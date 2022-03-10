@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Proyecto JavaScript</title>
+    <!-- ESTILOS CSS-->
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link id="theme" href="css/purple.css" rel="stylesheet" type="text/css" />
+
+    <!-- Jquery-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="js/jquery-ui-1.13.1/jquery-ui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="js/jquery-ui-1.13.1/jquery-ui.structure.min.css"/>
+    <link rel="stylesheet" type="text/css" href="js/jquery-ui-1.13.1/jquery-ui.theme.min.css"/>
+    <script  type="text/javascript" src="js/jquery-ui-1.13.1/jquery-ui.min.js"></script>
+
+     <!-- MANTENER COLOR-->
+     <script>
+      var theme = $("#theme");
+      var actualcolor = localStorage.getItem("colorTheme");
+      switch (actualcolor) {
+        case "purple":
+          theme.attr("href", "css/purple.css");
+          localStorage.setItem("colorTheme", "purple");
+          break;
+        case "red":
+          theme.attr("href", "css/red.css");
+          localStorage.setItem("colorTheme", "red");
+          break;
+        case "blue":
+          theme.attr("href", "css/blue.css");
+          localStorage.setItem("colorTheme", "blue");
+          break;
+          case "aesthetic":
+          theme.attr("href", "css/aesthetic.css");
+          localStorage.setItem("colorTheme", "aesthetic");
+          break;
+        default:
+          console.error("Error eleccion theme");
+          break;
+      }
+    </script>
+    <!-- MAIN JAVASCRIPT-->
+    <script type="text/javascript" src="js/main.js"></script>
+
+    
+  </head>
+  <body>
+    <div id="selector-theme">
+      <div id="to-purple"></div>
+      <div id="to-red"></div>
+      <div id="to-blue"></div>
+      <div id="to-aehstetic"></div>
+    </div>
+    <section id="global">
+      <header>
+        <!-- TITULO COMO MENU-->
+        <div id="logo"><h1>PROYECTO JS</h1></div>
+        <div class="clearfix"></div>
+        <nav id="menu">
+          <ul>
+            <li><a href="index.html">INICIO</a></li>
+            <li><a href="reloj.html">RELOJ</a></li>
+            <li><a href="aboutme.html">SOBRE MI</a></li>
+            <li><a href="contact.html">CONTACTO</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <!-- CONTENIDO -->
+      <section id="content">
+        <div id="box">
+            <h2> Sobre mí</h2>
+          <!-- CARGAMOS ACORDEON-->
+          <div id="acordeon">
+              <h3>¿Quienes somos</h3>
+              <div>
+                  <p> Hola soy miguel rodriguez gonzalez</p>
+              </div>
+              <h3>¿De donde sois?</h3>
+              <div>
+                  <p> Hola soy miguel rodriguez gonzalez</p>
+              </div>
+              <h3>¿A donde vais?</h3>
+              <div>
+                  <p> Hola soy miguel rodriguez gonzalez</p>
+              </div>
+          </div>
+        </div>
+        <aside id="sidebar">
+          <div id="about">
+            <h4><span>Who i am</span></h4>
+            <img src="img/caracol.jpg" />
+            <p>
+              Era tarde tonta y caliente De esa queman el sol la frente era
+              verano del 87 y yo me moria por verte
+            </p>
+          </div>
+          <div id="login">
+            <form>
+              <h4><span>Identifícate</span></h4>
+              <label for="name">Nombre:</label><br />
+              <input type="text" name="name" id="form-name" /><br />
+              <label for="correo">Correo:</label><br />
+              <input type="email" name="correo" />
+              <label for="password">Contraseña:</label><br />
+              <input type="password" name="password" /><br />
+              <input type="submit" value="Guardar" />
+            </form>
+          </div>
+        </aside>
+        <div class="clearfix"></div>
+      </section>
+    </section>
+    <footer>
+      Master en JavaScript: Miguel Rodríguez González &copy;
+
+      <a href="#" class="subir">Subir</a>
+    </footer>
+  </body>
+</html>

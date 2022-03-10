@@ -1,0 +1,9 @@
+{
+  "peliculas": [
+    {"titulo": "Batman vs Superman", "year": 2017, "pais": "USA" },
+    { "titulo": "Cinema Paradiso", "year": 1989, "pais": "Italia" },
+    { "titulo": "Shreek 1", "year": 2000, "pais": "USA" },
+    { "titulo": "Star Wars", "year": 1980, "pais": "USA" },
+    { "titulo": "Ready Player One", "year": 2020, "pais": "USA" }
+  ]
+}

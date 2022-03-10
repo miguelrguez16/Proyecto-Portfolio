@@ -1,0 +1,2 @@
+tsc nombrearchivo.ts
+//ejecuta to  -> // tsc -w *.ts 

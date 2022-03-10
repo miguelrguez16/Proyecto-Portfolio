@@ -1,0 +1,9 @@
+* {
+    font-family: Helvetica, sans-serif;
+    background-color: aliceblue;
+    text-align: center;
+}
+h3 {
+    font-size: 85%;
+    position: relative;
+}

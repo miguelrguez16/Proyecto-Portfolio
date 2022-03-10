@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>JQUERY</title>
+    <style>
+    * {
+        background-color: aliceblue;
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 13px;
+      }
+      #datos {
+        background-color: antiquewhite;
+        border: 2px solid black;
+        margin-bottom: 20 px;
+        
+      }
+      form {
+        margin-top: 15px;
+
+      }
+    </style>
+
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="js/05-ajax.js"></script>
+  </head>
+  <body>
+    <h1>AJAX</h1>
+    <div id="datos"></div>
+    <form action="https://reqres.in/api/users" method="POST" id="formulario">
+      <label for="nombre">Nombre:</label>
+      <input type="text" name="nombre" /><br /><br />
+      <label for="job">Trabajo:</label>
+      <input type="text" name="job" /><br />
+      <input type="submit" value="Registrar" />
+    </form>
+  </body>
+</html>

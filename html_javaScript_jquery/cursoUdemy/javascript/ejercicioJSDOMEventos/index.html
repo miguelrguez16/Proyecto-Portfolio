@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ejercicio DOM, Eventos y funciones</title>
+    <script
+      type="text/JavaScript"
+      src="/javascript/ejercicioJSDOMEventos/32-ejercicio-dom.js"
+    ></script>
+    <style>
+      .box {
+        width: 200px;
+        height: 250px;
+        float: left;
+        margin: 20px;
+        border: 3px dashed blueviolet;
+        padding: 3px;
+      }
+      .dashed {
+        border: 3px dashed black;
+        padding: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Ejercicio DOM, Eventos y funciones</h1>
+    <!-- Formulario, con campos nombre apellidos y edad-->
+    <!-- Boron de enviar el formulario: eventos submit-->
+    <!-- Mostar los datos por pantalla-->
+    <!-- Tenber un boton que al darle click nos muestra datos actuales del formulario-->
+    <!-- VALidacion del formulario-->
+    <div class="box">
+      <form action="#" metod="POST" id="formulario" onsubmit="return false;">
+        <label for="mombre">Nombre:</label><br />
+        <input type="text" id="nombre" name="nombre" /><br />
+        <span id="error_nombre"></span>
+        <label for="apellidos">Apellidos:</label><br />
+        <input type="text" id="apellidos" name="apellidos" /><br />
+        <label for="edad">Edad:</label><br />
+        <input type="number" id="edad" name="edad" /><br />
+        <input type="submit" value="enviar" id="submit" />
+      </form>
+    </div>
+
+    <div class="box dashed">
+      <h3>Información del usuario:</h3>
+      <hr />
+      <p id="p_nombre">
+        Nombre: <span></span>
+      </p>
+      <p id="p_apellidos">
+        Apellidos: <span></span>
+      </p>
+      <p id="p_edad">
+        Edad: <span></span>
+      </p>
+    </div>
+  </body>
+</html>

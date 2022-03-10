@@ -1,0 +1,34 @@
+* {
+  background-color: aliceblue;
+}
+div {
+  width: 100px;
+  height: 100px;
+  border: 2px solid black;
+  background-color: blanchedalmond;
+}
+input {
+  float: left;
+  padding: 10px;
+  width: 100px;
+  font-size: 10px;
+}
+#datos {
+  float: right;
+  border: 4px dashed black;
+  padding: 5px;
+  width: 100px;
+  height: 100px;
+  background-color: azure;
+  display: none;
+}
+#sigueme {
+  width: 25px;
+  height: 25px;
+  position: absolute; /** asi no interfiere con otros*/
+  display: block;
+  background: yellow;
+  opacity: 0.25;
+  border-radius: 999px;
+}
+/*#caja:hover { background-color: rgb(80, 202, 202); cursor: pointer; transition: 300ms all; }*/
