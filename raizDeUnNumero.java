@@ -8,6 +8,8 @@ public class raizDeUnNumero{
      */
     public static void main(String[]args){
         Scanner s = new Scanner(System.in);
+        int p = s.nextInt();
+
         int x[]={2,9,16,25,36};
         for (int i : x) {
             double y = sq(i/2,0,i);
