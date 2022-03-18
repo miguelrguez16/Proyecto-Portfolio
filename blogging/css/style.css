@@ -1,0 +1,14 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    list-style: none; /*no hay puntos en las lineas*/
+}
+
+nav ul{
+    display: flex;
+    justify-content: space-between;
+}
+
+body{
+    
+}

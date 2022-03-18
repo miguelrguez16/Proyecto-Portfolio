@@ -8,8 +8,6 @@ export class Toyota extends Coche{
         this._modelo = "Toyota";
         this._electrico = false;
     }
-
-
 }
 var t = new Toyota();
 console.log(t.toString());

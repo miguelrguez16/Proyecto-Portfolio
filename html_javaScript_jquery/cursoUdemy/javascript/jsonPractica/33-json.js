@@ -24,13 +24,20 @@ var films = [
 ];
 
 window.addEventListener("load", () => {
-  var caja = document.querySelector("#caja_peliculas");
+  var caja = document.querySelector("#caja");
 
   films.forEach((element, index) => {
     var p = document.createElement("p");
     p.append(element.titulo + ": " + element.year);
     caja.append(p);
   });
+  console.log(films);
+
+  films.push(pelicula);
+  console.log(films);
+  films.push({"otro":"algo más"});
+  console.log(films);
+
 });
 
 
