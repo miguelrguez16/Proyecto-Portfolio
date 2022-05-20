@@ -17,6 +17,7 @@ export class ProjectService {
     testService():string{
         return "probando servicio";
     }
+    
     saveProject(newProject:Project):Observable<any>{
         let params = JSON.stringify(newProject);
         // como se va a enviar la info
