@@ -1,11 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
 *{
     font-family: Arial, Helvetica, sans-serif;
-    background-color: antiquewhite;
+    background-color: white;
 }
 .active {
     border: 3px solid salmon;
 }
 label{
     display: block;
+}
+nav {
+    display: flexbox;
+    margin: 0px 20px 0px 0px;
+    width: 90%;
+    height: 15px;
+}
+nav a {
+    color:white;
+    padding: 5px;
+    text-decoration: none;
+    background-color: #50A8EA;    
 }

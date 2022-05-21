@@ -5,13 +5,15 @@ import { Observable } from 'rxjs';
 import { Project } from '../models/project.model';
 import { Global } from './global';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class ProjectService {
     public url:string;
-    constructor(
-        private _http: HttpClient
-    ){
+    public _headersJson:HttpHeaders;
+    constructor( private _http: HttpClient ){
         this.url = Global.url;
+        this._headersJson = new HttpHeaders().set("Content-Type","application/json");
     }
     
     testService():string{
@@ -20,39 +22,31 @@ export class ProjectService {
     
     saveProject(newProject:Project):Observable<any>{
         let params = JSON.stringify(newProject);
-        // como se va a enviar la info
-        let headers = new HttpHeaders().set("Content-Type","application/json");
         console.log("guardando proyecto ", newProject._id);
        
-        return this._http.post(this.url +"save-project", params,{headers:headers} );
+        return this._http.post(this.url +"save-project", params,{headers:this._headersJson} );
     }
     
     getProjects():Observable<any>{
-        let headers = new HttpHeaders()
-        .set("Content-Type","application/json");
-        console.log("obteniendo todos los proyectos ");
-     
-        return this._http.get(this.url + "projects", {headers: headers});
+        console.log("obteniendo todos los proyectos ");     
+        return this._http.get(this.url + "projects", {headers:this._headersJson});
     }
 
 
     getProject(id:string):Observable<any>{
-        let headers = new HttpHeaders().set("Content-Type","application/json");
         console.log("obteniendo proyecto ", id)
-        return this._http.get(this.url + "project/" + id, {headers:headers})
+        return this._http.get(this.url + "project/" + id, {headers:this._headersJson})
     }
 
     deleteProject(id:string):Observable<any>{
-        let headers = new HttpHeaders().set("Content-Type","application/json");
         console.log("eliminando proyecto ", id)
-        return this._http.delete(this.url + "project/" + id, {headers:headers})
+        return this._http.delete(this.url + "project/" + id, {headers:this._headersJson})
     }
 
     updateProject(newProject:Project):Observable<any>{
         let params = JSON.stringify(newProject);
-        let headers = new HttpHeaders().set("Content-Type","application/json");
         console.log("actualizar proyecto ", newProject._id)
-        return this._http.put(this.url + "project/" + newProject._id, params, {headers:headers})
+        return this._http.put(this.url + "project/" + newProject._id, params, {headers:this._headersJson})
     }
 
     

@@ -23,7 +23,7 @@ export class ContactoComponent implements OnInit {
   onSubmit(form:any) {
     this.data_user = form;
     //form.reset;
-    console.log(this.data_user);
+    console.table(this.data_user.value);
 
   }
 }

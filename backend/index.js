@@ -1,7 +1,7 @@
 "use strict";
 // conexion base de datos
 var mongoose = require("mongoose");
-var dbUri = "mongodb+srv://miguelucu16:ALGOOOOOO@eol.rp9fe.mongodb.net/PortFolioBackend?retryWrites=true&w=majority";
+var dbUri = "mongodb+srv://miguelucu16:C28AgNHSarJza79l@eol.rp9fe.mongodb.net/PortFolioBackend?retryWrites=true&w=majority";
 
 //creacion servidor
 var app = require("./app");
